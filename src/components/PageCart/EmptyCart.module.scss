@@ -1,0 +1,23 @@
+@import "../../_scss";
+
+.info {
+  color: var(--color-2);
+  font-size: 1.125rem;
+
+  &__link {
+    color: var(--color-1);
+    text-decoration: underline;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus {
+      color: var(--color-4);
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-1);
+      outline-offset: 0.125rem;
+      border-radius: 0.25rem;
+    }
+  }
+}

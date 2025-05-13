@@ -1,0 +1,91 @@
+@import "../../_scss";
+
+.navbar {
+  @include glassmorphic;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 9.5rem;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+
+  @include screen-min-480 {
+    top: -0.75rem;
+    right: -1rem;
+    width: 10.5rem;
+  }
+  @include screen-min-768 {
+    padding-top: 7.5rem;
+    top: -1rem;
+    right: -1.5rem;
+    width: 13rem;
+  }
+  @include screen-burger {
+    backdrop-filter: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &_hidden {
+    visibility: hidden;
+    opacity: 0;
+    @include screen-burger {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &_visible {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s;
+    @include screen-burger {
+      transition: all 0s;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+  font-size: 1.5rem;
+  width: 100%;
+  @include screen-min-768 {
+    font-size: 1.75rem;
+  }
+  @include screen-burger {
+    flex-direction: row;
+    text-shadow: var(--background) 2px 2px 2px, var(--background) -2px 2px 2px,
+      var(--background) -2px -2px 2px, var(--background) 2px -2px 2px;
+  }
+  @include screen-min-1280 {
+    font-size: 2rem;
+    gap: 3.5rem;
+  }
+
+  & li a {
+    border: none;
+    outline: none;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus {
+      color: var(--color-2);
+    }
+  }
+}

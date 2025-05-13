@@ -1,0 +1,138 @@
+@import "../../_scss";
+
+@mixin _max-width {
+  margin: auto;
+  width: 100%;
+  max-width: 42rem;
+  @include screen-min-1280 {
+    max-width: none;
+  }
+}
+
+.main {
+  @include padding-inline;
+  min-height: 100vh;
+  padding-top: 5rem;
+  padding-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include screen-min-480 {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+  @include screen-min-768 {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
+  @include screen-min-1280 {
+    padding-bottom: 4rem;
+  }
+}
+
+.product {
+  @include max-width;
+  display: grid;
+  gap: 1rem;
+  @include screen-min-1024 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 3rem;
+    max-width: 80rem;
+    align-items: center;
+  }
+
+  &__header {
+    color: var(--color-4);
+    font-family: var(--font-quicksand);
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    @include screen-min-480 {
+      font-size: 3rem;
+    }
+    @include screen-min-768 {
+      font-size: 3.5rem;
+    }
+    @include screen-min-1024 {
+      grid-column: 2;
+      grid-row: 1;
+      text-align: left;
+    }
+  }
+
+  &__image {
+    width: 75%;
+    max-width: 30rem;
+    margin: 1rem auto;
+    @include screen-min-1024 {
+      width: 100%;
+      max-width: none;
+      grid-column: 1;
+      grid-row: 1/-1;
+    }
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    @include _max-width;
+    color: var(--color-3);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    @include screen-min-480 {
+      font-size: 1.5rem;
+    }
+    @include screen-min-768 {
+      font-size: 1.75rem;
+    }
+
+    &_info {
+      @include screen-min-1024 {
+        grid-column: 2;
+        grid-row: 2;
+      }
+    }
+
+    &_ingredients {
+      @include screen-min-1024 {
+        grid-column: 2;
+        grid-row: 3;
+      }
+    }
+
+    & span {
+      color: var(--color-4);
+      font-weight: 700;
+    }
+  }
+
+  &__buttonPrice {
+    @include _max-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+    @include screen-min-1024 {
+      grid-column: 2;
+      grid-row: 4;
+    }
+  }
+
+  &__price {
+    color: var(--color-4);
+    font-size: 1.5rem;
+    font-weight: 700;
+    @include screen-min-480 {
+      font-size: 1.75rem;
+    }
+  }
+}

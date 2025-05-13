@@ -1,0 +1,75 @@
+@import "../../_scss";
+
+.main {
+  @include padding-inline;
+  @include background-set;
+  min-height: 100vh;
+  padding-top: 7rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+
+  @include screen-min-480 {
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+  }
+
+  @include screen-min-768 {
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+  }
+  @include screen-min-1280 {
+    padding-bottom: 4rem;
+  }
+
+  &__inner {
+    @include max-width;
+    flex: 1;
+    @include screen-min-1280 {
+      margin-right: 10%;
+    }
+  }
+
+  &__info {
+    @include glassmorphic;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin: auto;
+    max-width: 20rem;
+    padding: 3rem 1rem;
+    @include screen-min-768 {
+      margin-right: 0;
+      max-width: 30rem;
+    }
+  }
+
+  &__404 {
+    color: var(--color-2);
+    font-size: 5rem;
+    font-weight: 700;
+    @include screen-min-768 {
+      font-size: 6.5rem;
+    }
+  }
+
+  &__oops {
+    color: var(--color-2);
+    font-size: 3rem;
+    font-weight: 700;
+    @include screen-min-768 {
+      font-size: 4rem;
+    }
+  }
+
+  &__page {
+    color: var(--color-3);
+    font-size: 1.5rem;
+    font-weight: 700;
+    @include screen-min-768 {
+      font-size: 2rem;
+    }
+  }
+}

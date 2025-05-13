@@ -1,0 +1,200 @@
+@mixin screen-burger {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen-min-480 {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin screen-min-768 {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen-min-1024 {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen-min-1280 {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin padding-inline {
+  padding-inline: 1rem;
+  @include screen-min-480 {
+    padding-inline: 1.5rem;
+  }
+  @include screen-min-768 {
+    padding-inline: 3rem;
+  }
+  @include screen-min-1024 {
+    padding-inline: 4rem;
+  }
+  @include screen-min-1280 {
+    padding-inline: 5rem;
+  }
+}
+
+@mixin max-width {
+  @include screen-min-1280 {
+    margin-inline: auto;
+    max-width: 105rem;
+  }
+}
+
+@mixin header-icon {
+  background-color: var(--color-1);
+  display: block;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  -webkit-mask-position: center;
+  transition: all 0.2s;
+  position: relative;
+}
+
+@mixin header-icon-size {
+  height: 1.75rem;
+  width: 1.75rem;
+  @include screen-min-480 {
+    height: 2rem;
+    width: 2rem;
+  }
+  @include screen-min-768 {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  @include screen-burger() {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+  @include screen-min-1280 {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+@mixin glassmorphic {
+  backdrop-filter: blur(4px);
+  background: rgba(75%, 75%, 75%, 25%);
+  border: 3px solid rgba(100%, 100%, 100%, 50%);
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 1rem 2rem rgba(0%, 0%, 0%, 25%);
+}
+
+@mixin font-h1 {
+  font-family: var(--font-kaushan-script);
+  font-weight: 400;
+  font-size: 3.75rem;
+  @include screen-min-480 {
+    font-size: 4.25rem;
+  }
+  @include screen-min-768 {
+    font-size: 5.25rem;
+  }
+  @include screen-min-1024 {
+    font-size: 6rem;
+  }
+}
+
+@mixin paragraph {
+  font-size: 1.375rem;
+  @include screen-min-480 {
+    font-size: 1.5rem;
+  }
+  @include screen-min-768 {
+    font-size: 2rem;
+  }
+  @include screen-min-1024 {
+    font-size: 2.25rem;
+  }
+}
+
+@mixin button {
+  background-color: var(--color-1);
+  border: 1px solid var(--color-1);
+  border-radius: 0.375rem;
+  color: #f4f4f4;
+  cursor: pointer;
+  display: block;
+  font-size: 1.25rem;
+  outline: none;
+  padding: 0.875rem 1.75rem;
+  text-decoration: none;
+  text-wrap: nowrap;
+  transition: all 0.2s;
+  width: fit-content;
+  @include screen-min-480 {
+    font-size: 1.375rem;
+    padding: 1rem 2rem;
+  }
+  @include screen-min-768 {
+    font-size: 1.5rem;
+    padding: 1.125rem 2.25rem;
+  }
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: var(--color-1);
+  }
+  &:focus {
+    outline: 2px solid var(--color-2);
+  }
+}
+
+@mixin background-set {
+  background-image: url("/background/lettuce.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 45% auto;
+  background-attachment: fixed;
+  @include screen-min-480 {
+    background-image: url("/background/lettuce.png"),
+      url("/background/peppers.png");
+    background-position: right bottom, -120px center;
+    background-repeat: no-repeat;
+    background-size: auto 35vh, auto 360px;
+  }
+  @include screen-min-768 {
+    background-image: url("/background/lettuce.png"),
+      url("/background/peppers.png"), url("/background/spices.png");
+    background-position: right bottom, -100px 20vh, -30% bottom;
+    background-repeat: no-repeat;
+    background-size: auto 35vh, auto 40vh, auto 45vh;
+  }
+  @include screen-min-1024 {
+    background-image: url("/background/lettuce.png"),
+      url("/background/peppers.png"), url("/background/spices.png");
+    background-position: right bottom, 5% 20vh, -20% bottom;
+    background-repeat: no-repeat;
+    background-size: auto 35vh, auto 40vh, auto 45vh;
+  }
+  @include screen-min-1280 {
+    background-image: url("/background/lettuce.png"),
+      url("/background/peppers.png"), url("/background/spices.png");
+    background-position: right bottom, 15% 20vh, 0 bottom;
+    background-repeat: no-repeat;
+    background-size: auto 35vh, auto 40vh, auto 45vh;
+  }
+  @media screen and (min-width: 1600px) {
+    background-image: url("/background/lettuce.png"),
+      url("/background/peppers.png"), url("/background/spices.png"),
+      url("/background/spices-set.png");
+    background-position: right bottom, 40% 20vh, 50% bottom, left center;
+    background-repeat: no-repeat;
+    background-size: auto 35vh, auto 40vh, auto 45vh, auto 80vh;
+  }
+}

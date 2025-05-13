@@ -1,0 +1,91 @@
+@import "../../_scss";
+
+.button {
+  color: var(--color-1);
+  font-family: var(--font-quicksand);
+  font-size: 1.25rem;
+  font-weight: 600;
+  outline: none;
+  border: 1px solid var(--color-1);
+  border-radius: 0.375rem;
+  background: transparent;
+  cursor: pointer;
+  height: 2.125rem;
+  width: 7.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  @include screen-min-480 {
+    font-size: 1.5rem;
+    height: 2.5rem;
+    width: 9rem;
+  }
+
+  & span {
+    text-wrap: nowrap;
+    position: relative;
+    transform: translateX(0rem);
+    transition: all 0.3s;
+  }
+
+  & svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: all 0.15s;
+    @include screen-min-480 {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    & path {
+      fill: var(--color-1);
+      transition: all 0.3s;
+    }
+
+    &:first-child {
+      position: absolute;
+      top: 50%;
+      left: -10%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:last-child {
+      position: relative;
+      transition-delay: 0.15s;
+    }
+  }
+}
+
+.button:hover,
+.button:focus {
+  border-color: var(--color-4);
+  color: var(--color-4);
+  & span {
+    transform: translateX(2rem);
+  }
+
+  & svg {
+    & path {
+      fill: var(--color-4);
+    }
+
+    &:first-child {
+      left: 20%;
+      transition-delay: 0.15s;
+    }
+
+    &:last-child {
+      transform: translateX(2.5rem);
+      transition-delay: 0s;
+    }
+  }
+}
+
+.button:focus {
+  outline: 3px solid var(--color-1);
+}

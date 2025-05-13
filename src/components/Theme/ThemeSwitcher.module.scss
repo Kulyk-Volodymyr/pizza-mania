@@ -1,0 +1,77 @@
+@import "../../_scss";
+
+.wrapper {
+  height: 3.25rem;
+  width: 4.5rem;
+  position: relative;
+
+  & svg {
+    height: auto;
+    width: 100%;
+    fill: var(--color-1);
+    & path {
+      fill: var(--color-1);
+      stroke: var(--background);
+    }
+  }
+}
+
+.button {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  background: transparent;
+  outline: none;
+  border: none;
+
+  &__cloud {
+    display: block;
+    width: 100%;
+
+    & svg path {
+      cursor: pointer;
+    }
+  }
+}
+
+.sun {
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  transition: all 0.3s;
+
+  &_hidden {
+    transform: scale(0.5);
+    top: 0;
+    left: 0;
+  }
+}
+
+.moon {
+  display: block;
+  width: 80%;
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  transition: all 0.3s;
+
+  &_hidden {
+    transform: scale(0.5);
+    top: 0;
+    right: 0;
+  }
+}
+
+.wrapper:has(button:hover),
+.wrapper:has(button:focus) {
+  & svg {
+    filter: drop-shadow(0 0 0.25rem var(--color-2));
+  }
+}

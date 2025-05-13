@@ -1,0 +1,104 @@
+@import "../../_scss";
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  z-index: 5;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  &__user {
+    @include header-icon;
+    @include header-icon-size;
+    mask-image: url("../../assets/icons/user.svg");
+    -webkit-mask-image: url("../../assets/icons/user.svg");
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-2);
+    }
+  }
+
+  &__cart {
+    @include header-icon;
+    @include header-icon-size;
+    mask-image: url("../../assets/icons/cart.svg");
+    -webkit-mask-image: url("../../assets/icons/cart.svg");
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-2);
+    }
+  }
+
+  &__burger {
+    @include header-icon-size;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+
+    &:hover span,
+    &:focus span {
+      background: var(--color-2);
+    }
+
+    @include screen-burger {
+      display: none;
+    }
+  }
+}
+
+.bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transform-origin: center;
+  transition: all 0.3s;
+  @include screen-min-768 {
+    height: 3px;
+  }
+
+  &_bar1 {
+    opacity: 1;
+    top: 16%;
+    &close {
+      opacity: 0;
+      top: 16%;
+    }
+  }
+  &_bar2 {
+    top: 38%;
+    &close {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  &_bar3 {
+    top: 62%;
+    &close {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  &_bar4 {
+    opacity: 1;
+    top: 84%;
+    &close {
+      opacity: 0;
+      top: 84%;
+    }
+  }
+}

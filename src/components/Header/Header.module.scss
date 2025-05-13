@@ -1,0 +1,28 @@
+@import "../../_scss";
+
+.header {
+  @include padding-inline;
+  padding-top: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  @include screen-min-480 {
+    padding-top: 1.5rem;
+  }
+  @include screen-min-768 {
+    padding-top: 2rem;
+  }
+
+  &__inner {
+    @include max-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    margin: auto;
+    position: relative;
+  }
+}

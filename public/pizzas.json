@@ -1,0 +1,258 @@
+[
+  {
+    "id": "margherita",
+    "name": "Margherita",
+    "description": "...pizza is known for its ingredients representing the colours of the Italian flag. When all of these delicious flavours are combined on a hand-kneaded pizza base, a universally-adored pizza is created.",
+    "components": ["tomato sauce", "mozzarella", "basil"],
+    "price": 12.29
+  },
+  {
+    "id": "pepperoni",
+    "name": "Pepperoni",
+    "description": "...pizza is a popular choice among pizza lovers. Its deliciously spicy, crispy pepperoni slices are perfectly complemented by the richness of melted mozzarella and tangy tomato sauce.",
+    "components": ["tomato sauce", "mozzarella", "pepperoni"],
+    "price": 13.49
+  },
+  {
+    "id": "hawaiian",
+    "name": "Hawaiian",
+    "description": "...pizza is a sweet and savory classic that blends the tropical taste of pineapple with the rich flavor of ham. The perfect balance of tangy and salty flavors, all on a soft, cheesy pizza crust.",
+    "components": ["tomato sauce", "mozzarella", "ham", "pineapple"],
+    "price": 14.59
+  },
+  {
+    "id": "four_cheeses",
+    "name": "Four Cheeses",
+    "description": "...pizza is for those who love the rich taste of multiple cheeses. This pizza combines four well-known cheese to create a creamy, indulgent experience that cheese lovers can't resist.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "gorgonzola",
+      "parmesan",
+      "ricotta"
+    ],
+    "price": 15.29
+  },
+  {
+    "id": "vegetarian",
+    "name": "Vegetarian",
+    "description": "...pizza is a vibrant medley of fresh vegetables piled on a bed of tomato sauce and mozzarella cheese. A healthy, tasty, and filling option for plant-based eaters.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "bell peppers",
+      "onions",
+      "olives",
+      "mushrooms"
+    ],
+    "price": 13.99
+  },
+  {
+    "id": "bbq_chicken",
+    "name": "BBQ Chicken",
+    "description": "...pizza is perfect for those who love smoky, tangy flavors. The tender chicken is marinated in barbecue sauce, and combined with red onions, mozzarella, and a drizzle of additional BBQ sauce.",
+    "components": ["barbecue sauce", "mozzarella", "chicken", "red onions"],
+    "price": 16.49
+  },
+  {
+    "id": "meat_lovers",
+    "name": "Meat Lovers",
+    "description": "...pizza is packed with a variety of meats, including pepperoni, sausage, bacon, and ham. If you're craving a hearty, protein-filled pizza, this one is for you.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "pepperoni",
+      "sausage",
+      "bacon",
+      "ham"
+    ],
+    "price": 17.79
+  },
+  {
+    "id": "seafood",
+    "name": "Seafood",
+    "description": "...pizza offers a unique taste with a mix of shrimp, mussels, and calamari. This pizza is perfect for seafood lovers who enjoy fresh, delicate flavors topped with a bit of garlic and herbs.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "shrimp",
+      "mussels",
+      "calamari",
+      "garlic",
+      "herbs"
+    ],
+    "price": 18.29
+  },
+  {
+    "id": "buffalo_chicken",
+    "name": "Buffalo Chicken",
+    "description": "...pizza delivers the spicy kick of buffalo sauce paired with tender, crispy chicken. It's a perfect combination of heat and flavor, finished off with a cool drizzle of ranch dressing.",
+    "components": ["buffalo sauce", "mozzarella", "chicken", "ranch dressing"],
+    "price": 16.89
+  },
+  {
+    "id": "caprese",
+    "name": "Caprese",
+    "description": "...pizza features fresh mozzarella, basil, and ripe tomatoes, drizzled with balsamic glaze. It's a light, refreshing pizza perfect for those who prefer a more delicate, non-saucy option.",
+    "components": ["mozzarella", "tomatoes", "basil", "balsamic glaze"],
+    "price": 14.19
+  },
+  {
+    "id": "texas_burger",
+    "name": "Texas Burger",
+    "description": "...pizza is like having a burger and pizza all in one. This pizza is topped with ground beef, cheddar cheese, onions, pickles, and a smoky barbecue sauce for a true Texas-inspired meal.",
+    "components": [
+      "tomato sauce",
+      "cheddar cheese",
+      "ground beef",
+      "onions",
+      "pickles",
+      "barbecue sauce"
+    ],
+    "price": 17.49
+  },
+  {
+    "id": "chicken_alfredo",
+    "name": "Chicken Alfredo",
+    "description": "...pizza is a creamy delight, featuring tender chicken, a rich alfredo sauce, and mozzarella cheese. It's a luxurious take on a classic pizza with comforting flavors.",
+    "components": ["alfredo sauce", "mozzarella", "chicken"],
+    "price": 16.79
+  },
+  {
+    "id": "supreme",
+    "name": "Supreme",
+    "description": "...pizza is loaded with all the best toppings - pepperoni, sausage, mushrooms, green peppers, onions, and olives. It's the ultimate pizza for those who want to enjoy a little bit of everything.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "pepperoni",
+      "sausage",
+      "mushrooms",
+      "green peppers",
+      "onions",
+      "olives"
+    ],
+    "price": 18.99
+  },
+  {
+    "id": "chicken_bacon_ranch",
+    "name": "Chicken Bacon Ranch",
+    "description": "...pizza combines the savory flavors of crispy bacon and tender chicken, all smothered in a creamy ranch sauce and topped with mozzarella cheese.",
+    "components": ["ranch sauce", "mozzarella", "chicken", "bacon"],
+    "price": 16.29
+  },
+  {
+    "id": "greek",
+    "name": "Greek",
+    "description": "...pizza is a Mediterranean delight, featuring Kalamata olives, feta cheese, red onions, and spinach. This pizza is perfect for those who enjoy bold, savory flavors.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "feta cheese",
+      "kalamata olives",
+      "red onions",
+      "spinach"
+    ],
+    "price": 15.59
+  },
+  {
+    "id": "cheeseburger",
+    "name": "Cheeseburger",
+    "description": "...pizza is the perfect fusion of two favorite foods. It's topped with beef, cheddar cheese, lettuce, pickles, onions, and a special sauce, creating a pizza that's both hearty and flavorful.",
+    "components": [
+      "tomato sauce",
+      "cheddar cheese",
+      "beef",
+      "lettuce",
+      "pickles",
+      "onions",
+      "special sauce"
+    ],
+    "price": 16.69
+  },
+  {
+    "id": "pesto_chicken",
+    "name": "Pesto Chicken",
+    "description": "...pizza is topped with a fresh basil pesto sauce, grilled chicken, sun-dried tomatoes, and mozzarella cheese, creating a savory, aromatic experience.",
+    "components": [
+      "pesto sauce",
+      "mozzarella",
+      "chicken",
+      "sun-dried tomatoes"
+    ],
+    "price": 16.49
+  },
+  {
+    "id": "chicken_parmesan",
+    "name": "Chicken Parmesan",
+    "description": "...pizza features breaded chicken, marinara sauce, mozzarella cheese, and a sprinkle of parmesan, offering a rich and comforting flavor.",
+    "components": [
+      "marinara sauce",
+      "mozzarella",
+      "parmesan",
+      "breaded chicken"
+    ],
+    "price": 17.29
+  },
+  {
+    "id": "marinara",
+    "name": "Marinara",
+    "description": "...pizza is a classic, simple pizza topped with a savory tomato sauce, garlic, oregano, and a sprinkle of parmesan. A pizza that's all about the rich flavor of the sauce.",
+    "components": ["tomato sauce", "garlic", "oregano", "parmesan"],
+    "price": 11.89
+  },
+  {
+    "id": "cheese_sticks",
+    "name": "Cheese Sticks",
+    "description": "...are a delicious appetizer or side dish, made from mozzarella cheese wrapped in pizza dough and baked until golden. Served with marinara sauce for dipping.",
+    "components": ["mozzarella", "pizza dough", "marinara sauce"],
+    "price": 8.99
+  },
+  {
+    "id": "bbq_ribs",
+    "name": "BBQ Ribs",
+    "description": "...pizza features tender, smoky ribs paired with mozzarella cheese, onions, and a rich barbecue sauce. A pizza that brings the flavors of the grill to your plate.",
+    "components": ["barbecue sauce", "mozzarella", "bbq ribs", "onions"],
+    "price": 19.49
+  },
+  {
+    "id": "spicy_buffalo",
+    "name": "Spicy Buffalo",
+    "description": "...pizza is for those who like a bit of heat. Topped with spicy buffalo chicken, mozzarella, and a drizzle of ranch dressing, this pizza is both fiery and delicious.",
+    "components": [
+      "buffalo sauce",
+      "mozzarella",
+      "spicy chicken",
+      "ranch dressing"
+    ],
+    "price": 16.39
+  },
+  {
+    "id": "vegetarian_supreme",
+    "name": "Vegetarian Supreme",
+    "description": "...pizza is loaded with fresh vegetables, including bell peppers, onions, mushrooms, and spinach, all on a bed of tomato sauce and mozzarella cheese.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "bell peppers",
+      "onions",
+      "mushrooms",
+      "spinach"
+    ],
+    "price": 14.49
+  },
+  {
+    "id": "italian_sausage",
+    "name": "Italian Sausage",
+    "description": "...pizza is a savory option, featuring crumbled Italian sausage, bell peppers, onions, and a sprinkle of parmesan, all topped with mozzarella cheese.",
+    "components": [
+      "tomato sauce",
+      "mozzarella",
+      "italian sausage",
+      "bell peppers",
+      "onions",
+      "parmesan"
+    ],
+    "price": 15.79
+  }
+]

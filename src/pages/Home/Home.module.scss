@@ -1,0 +1,167 @@
+@import "../../_scss";
+
+.main {
+  @include padding-inline;
+  min-height: 100vh;
+  padding-top: 6rem;
+  display: flex;
+  overflow: hidden;
+
+  @include screen-min-480 {
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+  }
+
+  @include screen-min-768 {
+    padding-bottom: 3rem;
+  }
+  @include screen-min-1280 {
+    padding-bottom: 4rem;
+  }
+
+  &__inner {
+    @include max-width;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+
+    @include screen-min-768 {
+      flex-direction: row;
+    }
+  }
+
+  &__switch {
+    transform: scale(0.7);
+    transform-origin: bottom right;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 0rem;
+
+    @include screen-min-480 {
+      bottom: 0;
+      transform: scale(0.8);
+    }
+    @include screen-min-768 {
+      bottom: 0;
+      transform: scale(0.9);
+    }
+    @include screen-min-1024 {
+      transform: scale(1);
+    }
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex: 1;
+  @include screen-min-768 {
+    align-items: flex-start;
+    flex: auto;
+    justify-content: space-evenly;
+    min-width: 22rem;
+    max-width: 22rem;
+    height: 80%;
+  }
+  @include screen-min-1024 {
+    flex: auto;
+    min-width: 24rem;
+    max-width: 24rem;
+  }
+  @include screen-min-1280 {
+    flex: auto;
+    min-width: 35rem;
+    max-width: 35rem;
+  }
+
+  &__header {
+    @include font-h1;
+    text-align: center;
+    @include screen-min-768 {
+      text-align: left;
+    }
+  }
+
+  &__info {
+    @include paragraph;
+    text-align: center;
+    color: var(--color-2);
+    @include screen-min-768 {
+      text-align: left;
+    }
+
+    &Span {
+      color: var(--color-1);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &__link {
+    display: none;
+    @include screen-min-768 {
+      @include button;
+      display: block;
+      margin-top: 3rem;
+    }
+  }
+}
+
+.image {
+  width: 140%;
+  max-width: 38rem;
+  position: relative;
+  @include screen-min-480 {
+    width: 100%;
+  }
+  @include screen-min-768 {
+    height: 100%;
+    flex: 1;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    @include screen-min-768 {
+      width: 44rem;
+      min-width: 44rem;
+      position: absolute;
+      left: 0;
+    }
+    @include screen-min-1280 {
+      width: 48rem;
+      min-width: 48rem;
+    }
+    @media screen and (min-width: 1600px) {
+      width: 52rem;
+      min-width: 52rem;
+      position: relative;
+      left: auto;
+    }
+  }
+
+  &__link {
+    @include button;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include screen-min-480 {
+      top: 50%;
+    }
+    @include screen-min-768 {
+      display: none;
+    }
+  }
+}
