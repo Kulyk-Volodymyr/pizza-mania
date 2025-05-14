@@ -1,6 +1,5 @@
 "use client";
 import styles from "./AddToCart.module.scss";
-import Image from "next/image";
 
 export default function AddToCart() {
   return (

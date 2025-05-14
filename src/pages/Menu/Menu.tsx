@@ -3,8 +3,9 @@ import styles from "./Menu.module.scss";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import AddToCart from "@/components/Buttons/AddToCart";
 import LayoutScrollPizza from "@/components/LayoutScrollPizza/LayoutScrollPizza";
+import Counter from "@/components/Buttons/Counter";
+import AddToCart from "@/components/Buttons/AddToCart";
 
 interface Data {
   id: string;
