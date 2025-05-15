@@ -3,7 +3,8 @@ import styles from "./Product.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { usePathname, notFound } from "next/navigation";
-import AddToCart from "@/components/Buttons/AddToCart";
+import CartHandler from "@/components/Buttons/CartHandler";
+import { useProductsStore } from "@/store/productsStore";
 
 interface Data {
   id: string;
@@ -15,36 +16,30 @@ interface Data {
 
 export default function Product() {
   const pathname = usePathname();
-  const [data, setData] = useState<Data | undefined | null>(undefined);
+  const { data } = useProductsStore((state) => state);
+  const [product, setProduct] = useState<Data | undefined | null>(undefined);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const path = pathname?.split("/");
-      let productId: string;
-      if (path?.length !== undefined) {
-        productId = path[path.length - 1];
-        const res = await fetch(`/pizzas.json`);
-        const json = await res.json();
-        let pizza = json.find((i: any) => i.id === productId);
-        if (pizza === undefined) {
-          pizza = null;
-        }
-        setData(pizza);
-      }
-    };
-    fetchData();
-  }, []);
+    if (!data) return;
+
+    const path = pathname?.split("/");
+    if (!path) return;
+
+    const productId = path[path.length - 1];
+    const pizza = data.find((i: any) => i.id === productId) ?? null;
+    setProduct(pizza);
+  }, [data]);
 
   return (
     <main className={styles.main}>
       <section className={styles.product}>
-        {data ? (
+        {product ? (
           <>
-            <h1 className={styles.product__header}>{data.name}</h1>
+            <h1 className={styles.product__header}>{product.name}</h1>
             <div className={styles.product__image}>
               <Image
-                src={`/pizzas/${data.id}.png`}
-                alt={`pizza ${data.name}`}
+                src={`/pizzas/${product.id}.png`}
+                alt={`pizza ${product.name}`}
                 width={600}
                 height={600}
                 priority
@@ -53,19 +48,19 @@ export default function Product() {
             <p
               className={`${styles.product__text} ${styles.product__text_info}`}
             >
-              <span>{data.name}</span> {data.description.slice(3)}
+              <span>{product.name}</span> {product.description.slice(3)}
             </p>
             <h2
               className={`${styles.product__text} ${styles.product__text_ingredients}`}
             >
-              <span>Ingredients:</span> {data.components.join(", ")}
+              <span>Ingredients:</span> {product.components.join(", ")}
             </h2>
             <div className={styles.product__buttonPrice}>
-              <AddToCart />
-              <p className={styles.product__price}>{data.price}$</p>
+              <CartHandler id={product.id} />
+              <p className={styles.product__price}>{product.price}$</p>
             </div>
           </>
-        ) : data === undefined ? (
+        ) : product === undefined ? (
           <div>Loading...</div>
         ) : (
           notFound()

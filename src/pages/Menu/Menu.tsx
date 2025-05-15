@@ -1,31 +1,13 @@
 "use client";
 import styles from "./Menu.module.scss";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LayoutScrollPizza from "@/components/LayoutScrollPizza/LayoutScrollPizza";
-import Counter from "@/components/Buttons/Counter";
-import AddToCart from "@/components/Buttons/AddToCart";
-
-interface Data {
-  id: string;
-  name: string;
-  description: string;
-  components: string[];
-  price: number;
-}
+import { useProductsStore } from "@/store/productsStore";
+import CartHandler from "@/components/Buttons/CartHandler";
 
 export default function Menu() {
-  const [data, setData] = useState<Data[] | undefined>(undefined);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(`/pizzas.json`);
-      const json = await res.json();
-      setData(json);
-    };
-    fetchData();
-  }, []);
+  const { data } = useProductsStore((state) => state);
 
   return (
     <LayoutScrollPizza pizza="/menu-pizza.png" animationName="menu">
@@ -61,7 +43,7 @@ export default function Menu() {
               </div>
 
               <div className={styles.action}>
-                <AddToCart />
+                <CartHandler id={item.id} />
 
                 <p className={styles.action__price}>{item.price}$</p>
               </div>

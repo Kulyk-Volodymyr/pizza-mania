@@ -3,6 +3,7 @@ import { Quicksand, Kaushan_Script } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Header from "../components/Header/Header";
+import { ProductsProvider } from "@/store/productsProvider";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -30,8 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${quicksand.variable} ${kaushanScript.variable}`}>
-        <Header />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ProductsProvider>
+          <Header />
+          <ThemeProvider>{children}</ThemeProvider>
+        </ProductsProvider>
       </body>
     </html>
   );

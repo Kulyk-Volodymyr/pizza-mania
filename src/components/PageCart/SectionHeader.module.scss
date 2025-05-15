@@ -1,0 +1,66 @@
+@import "../../_scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  @include screen-min-480 {
+    margin-left: -3.25rem;
+  }
+
+  &__iconBg {
+    background: var(--color-4);
+    border-radius: 50%;
+    height: 3.25rem;
+    width: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    @include screen-min-480 {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  &__icon {
+    @include header-icon;
+    height: 2rem;
+    width: 2rem;
+    @include screen-min-480 {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+
+    &_cart {
+      mask-image: url("../../assets/icons/cart.svg");
+      -webkit-mask-image: url("../../assets/icons/cart.svg");
+    }
+
+    &_user {
+      mask-image: url("../../assets/icons/user.svg");
+      -webkit-mask-image: url("../../assets/icons/user.svg");
+    }
+
+    &_address {
+      mask-image: url("../../assets/icons/map-pointer.svg");
+      -webkit-mask-image: url("../../assets/icons/map-pointer.svg");
+    }
+
+    &_payment {
+      mask-image: url("../../assets/icons/payment.svg");
+      -webkit-mask-image: url("../../assets/icons/payment.svg");
+    }
+  }
+
+  &__title {
+    color: var(--color-4);
+    font-size: 1.75rem;
+    @include screen-min-480 {
+      font-size: 2rem;
+    }
+  }
+}

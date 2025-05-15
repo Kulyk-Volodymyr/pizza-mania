@@ -1,9 +1,20 @@
 "use client";
 import styles from "./AddToCart.module.scss";
+import { useCartStore } from "@/store/cartStore";
 
-export default function AddToCart() {
+interface Props {
+  id: string;
+}
+
+export default function AddToCart({ id }: Props) {
+  const { put } = useCartStore((state) => state);
+
   return (
-    <button className={styles.button} aria-label="add to cart">
+    <button
+      className={styles.button}
+      aria-label="add to cart"
+      onClick={() => put(id)}
+    >
       <svg
         width="24"
         height="24"

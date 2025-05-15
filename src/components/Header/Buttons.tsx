@@ -1,5 +1,6 @@
 import styles from "./Buttons.module.scss";
 import Link from "next/link";
+import { useCartStore } from "@/store/cartStore";
 
 interface ButtonsProps {
   navbarHidden: boolean;
@@ -12,6 +13,7 @@ export default function Buttons({
   toggleNavbar,
   hideNavbar,
 }: ButtonsProps) {
+  const { itemsQuantity } = useCartStore((state) => state);
   return (
     <div className={styles.buttons}>
       <nav>
@@ -20,7 +22,7 @@ export default function Buttons({
             <Link
               href="/login"
               className={styles.buttons__user}
-              //aria-labelledby="go to login page"
+              aria-label="go to login page"
               onClick={() => hideNavbar()}
             ></Link>
           </li>
@@ -28,11 +30,16 @@ export default function Buttons({
             <Link
               href="/cart"
               className={styles.buttons__cart}
-              //aria-labelledby="go to cart page"
+              aria-label="go to cart page"
               onClick={() => hideNavbar()}
             ></Link>
           </li>
         </ul>
+        {itemsQuantity > 0 && (
+          <div className={styles.counter}>
+            <p className={styles.counter__value}>{itemsQuantity}</p>
+          </div>
+        )}
       </nav>
       <button
         className={styles.buttons__burger}

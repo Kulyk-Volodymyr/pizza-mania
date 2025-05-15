@@ -2,138 +2,54 @@
 import styles from "./Cart.module.scss";
 import Link from "next/link";
 import EmptyCart from "@/components/PageCart/EmptyCart";
+import FullCart from "@/components/PageCart/FullCart";
 import LayoutScrollPizza from "@/components/LayoutScrollPizza/LayoutScrollPizza";
+import { useCartStore } from "@/store/cartStore";
+import SectionHeader from "@/components/PageCart/SectionHeader";
 
 export default function Cart() {
+  const { itemsQuantity } = useCartStore((state) => state);
+
   return (
     <LayoutScrollPizza pizza="/cart-pizza.png" animationName="cart">
       <div className={styles.container}>
         <section className={styles.section}>
-          <div
-            className={`${styles.section__header} ${styles.section__header_order}`}
-          >
-            <div className={styles.section__iconBg}>
-              <div
-                className={`${styles.section__icon} ${styles.section__icon_cart}`}
-              ></div>
-            </div>
-            <h1 className={styles.section__title}>My Pizzas</h1>
-          </div>
-          <EmptyCart />
+          <SectionHeader title="My Pizzas" icon="cart" />
+
+          {itemsQuantity > 0 ? <FullCart /> : <EmptyCart />}
         </section>
 
-        <section className={styles.section}>
-          <div className={styles.section__header}>
-            <div className={styles.section__iconBg}>
-              <div
-                className={`${styles.section__icon} ${styles.section__icon_user}`}
-              ></div>
-            </div>
-            <h2 className={styles.section__title}>Account</h2>
-          </div>
-          <p className={styles.section__info}>
-            To place your order now, log in to your existing account or sign up.
-          </p>
-          <div className={styles.account}>
-            <Link href="/login" className={styles.account__link}>
-              <span>Have an account?</span>
-              <span>Log In</span>
-            </Link>
-            <Link href="/login" className={styles.account__link}>
-              <span>New to Mania?</span>
-              <span>Sign In</span>
-            </Link>
-          </div>
-        </section>
+        <div>
+          <section className={styles.section}>
+            <SectionHeader title="Account" icon="user" />
 
-        <section className={styles.section}>
-          <div className={styles.section__header}>
-            <div className={styles.section__iconBg}>
-              <div
-                className={`${styles.section__icon} ${styles.section__icon_address}`}
-              ></div>
-            </div>
-            <h2 className={styles.section__title}>Delivery address</h2>
-          </div>
-        </section>
+            <p className={styles.section__info}>
+              To place your order now, log in to your existing account or sign
+              up.
+            </p>
 
-        <section className={styles.section}>
-          <div className={styles.section__header}>
-            <div className={styles.section__iconBg}>
-              <div
-                className={`${styles.section__icon} ${styles.section__icon_payment}`}
-              ></div>
+            <div className={styles.account}>
+              <Link href="/login" className={styles.account__link}>
+                <span>Have an account?</span>
+                <span>Log In</span>
+              </Link>
+
+              <Link href="/login" className={styles.account__link}>
+                <span>New to Mania?</span>
+                <span>Sign In</span>
+              </Link>
             </div>
-            <h2 className={styles.section__title}>Payment</h2>
-          </div>
-        </section>
+          </section>
+
+          <section className={styles.section}>
+            <SectionHeader title="Delivery address" icon="address" />
+          </section>
+
+          <section className={styles.section}>
+            <SectionHeader title="Payment" icon="payment" />
+          </section>
+        </div>
       </div>
     </LayoutScrollPizza>
   );
 }
-
-/*
-<main className={styles.main}>
-  <div className={styles.main__inner}>
-    <section className={styles.section}>
-      <div
-        className={`${styles.section__header} ${styles.section__header_order}`}
-      >
-        <div className={styles.section__iconBg}>
-          <div
-            className={`${styles.section__icon} ${styles.section__icon_cart}`}
-          ></div>
-        </div>
-        <h1 className={styles.section__title}>My Pizzas</h1>
-      </div>
-      <EmptyCart />
-    </section>
-
-    <section className={styles.section}>
-      <div className={styles.section__header}>
-        <div className={styles.section__iconBg}>
-          <div
-            className={`${styles.section__icon} ${styles.section__icon_user}`}
-          ></div>
-        </div>
-        <h2 className={styles.section__title}>Account</h2>
-      </div>
-      <p className={styles.section__info}>
-        To place your order now, log in to your existing account or sign up.
-      </p>
-      <div className={styles.account}>
-        <Link href="/login" className={styles.account__link}>
-          <span>Have an account?</span>
-          <span>Log In</span>
-        </Link>
-        <Link href="/login" className={styles.account__link}>
-          <span>New to Mania?</span>
-          <span>Sign In</span>
-        </Link>
-      </div>
-    </section>
-
-    <section className={styles.section}>
-      <div className={styles.section__header}>
-        <div className={styles.section__iconBg}>
-          <div
-            className={`${styles.section__icon} ${styles.section__icon_address}`}
-          ></div>
-        </div>
-        <h2 className={styles.section__title}>Delivery address</h2>
-      </div>
-    </section>
-
-    <section className={styles.section}>
-      <div className={styles.section__header}>
-        <div className={styles.section__iconBg}>
-          <div
-            className={`${styles.section__icon} ${styles.section__icon_payment}`}
-          ></div>
-        </div>
-        <h2 className={styles.section__title}>Payment</h2>
-      </div>
-    </section>
-  </div>
-</main>;
-*/

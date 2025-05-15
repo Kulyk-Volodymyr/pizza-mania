@@ -54,6 +54,14 @@
       display: none;
     }
   }
+
+  & nav {
+    position: relative;
+
+    & ul {
+      position: relative;
+    }
+  }
 }
 
 .bar {
@@ -99,6 +107,43 @@
     &close {
       opacity: 0;
       top: 84%;
+    }
+  }
+}
+
+.counter {
+  display: none;
+
+  @include screen-min-768 {
+    display: block;
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.25rem;
+    background: var(--color-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
+    @include screen-min-1024 {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    @include screen-min-1280 {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+
+  &__value {
+    font-size: 0.875rem;
+    @include screen-min-1024 {
+      font-size: 1.125rem;
+    }
+    @include screen-min-1280 {
+      font-size: 1.25rem;
     }
   }
 }
