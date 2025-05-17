@@ -2,7 +2,6 @@
 import styles from "./Home.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-
 import { ThemeSwitcher } from "@/components/Theme/ThemeSwitcher";
 
 export default function Home() {
@@ -17,6 +16,7 @@ export default function Home() {
             But <span className={styles.section__infoSpan}>Pizza</span> Never
             Does
           </p>
+
           <Link href="/menu" className={styles.section__link}>
             See Our Menu
           </Link>

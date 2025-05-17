@@ -5,19 +5,13 @@ import Image from "next/image";
 import { usePathname, notFound } from "next/navigation";
 import CartHandler from "@/components/Buttons/CartHandler";
 import { useProductsStore } from "@/store/productsStore";
-
-interface Data {
-  id: string;
-  name: string;
-  description: string;
-  components: string[];
-  price: number;
-}
+import type { Product } from "@/types";
+import Loader from "@/components/Loader/Loader";
 
 export default function Product() {
   const pathname = usePathname();
   const { data } = useProductsStore((state) => state);
-  const [product, setProduct] = useState<Data | undefined | null>(undefined);
+  const [product, setProduct] = useState<Product | undefined | null>(undefined);
 
   useEffect(() => {
     if (!data) return;
@@ -61,7 +55,9 @@ export default function Product() {
             </div>
           </>
         ) : product === undefined ? (
-          <div>Loading...</div>
+          <div className={styles.main__loader}>
+            <Loader />
+          </div>
         ) : (
           notFound()
         )}

@@ -28,6 +28,14 @@
   @include screen-min-1280 {
     padding-bottom: 4rem;
   }
+
+  &__loader {
+    @include _max-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
+  }
 }
 
 .product {

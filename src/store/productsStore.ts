@@ -1,12 +1,5 @@
 import { create } from "zustand";
-
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  components: string[];
-  price: number;
-}
+import type { Product } from "@/types";
 
 interface ProductsStore {
   data: Product[] | null;

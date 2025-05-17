@@ -5,6 +5,7 @@ import Image from "next/image";
 import LayoutScrollPizza from "@/components/LayoutScrollPizza/LayoutScrollPizza";
 import { useProductsStore } from "@/store/productsStore";
 import CartHandler from "@/components/Buttons/CartHandler";
+import Loader from "@/components/Loader/Loader";
 
 export default function Menu() {
   const { data } = useProductsStore((state) => state);
@@ -20,7 +21,7 @@ export default function Menu() {
                 <Link href={`/menu/${item.id}`} className={styles.info__image}>
                   <Image
                     src={`/pizzas/${item.id}_small.png`}
-                    alt="pizza"
+                    alt={`pizza ${item.name}`}
                     width={180}
                     height={180}
                     priority
@@ -51,7 +52,9 @@ export default function Menu() {
           ))}
         </ul>
       ) : (
-        <div>Loading...</div>
+        <div className={styles.section__loader}>
+          <Loader />
+        </div>
       )}
     </LayoutScrollPizza>
   );

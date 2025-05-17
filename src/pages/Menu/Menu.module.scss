@@ -53,6 +53,14 @@
       column-gap: 3rem;
     }
   }
+
+  &__loader {
+    @include _list-max-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+  }
 }
 
 .info {

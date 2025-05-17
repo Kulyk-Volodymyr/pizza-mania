@@ -1,0 +1,36 @@
+@import "../../_scss";
+
+@mixin _font-size {
+  font-size: 1.25rem;
+  @include screen-min-480 {
+    font-size: 1.75rem;
+  }
+}
+
+.bill {
+  border-top: 2px solid var(--color-1);
+  margin-top: 2rem;
+
+  @include screen-min-480 {
+    margin-top: 2.5rem;
+  }
+
+  &__title {
+    @include _font-size;
+    color: var(--color-4);
+  }
+
+  &__total {
+    border-top: 1px solid var(--color-3);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    &Price {
+      @include _font-size;
+      color: var(--color-1);
+    }
+  }
+}

@@ -1,8 +1,5 @@
 import { create } from "zustand";
-
-interface Cart {
-  [productId: string]: number;
-}
+import type { Cart } from "@/types";
 
 interface States {
   cart: Cart;

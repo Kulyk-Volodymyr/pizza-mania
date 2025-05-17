@@ -1,0 +1,158 @@
+@import "../../_scss";
+
+$_size: 60px;
+
+.slice {
+  background: radial-gradient(at 100% 100%, #0000 60%, #f7cf6d 65%, #ff8c42 70%),
+    conic-gradient(
+      from -90deg at 100% 100%,
+      #f7cf6d 2deg,
+      #0000 6deg 39deg,
+      #f7cf6d 43deg 47deg,
+      #0000 51deg 84deg,
+      #f7cf6d 88deg 90deg,
+      #0000 90deg
+    );
+  width: $_size;
+  height: $_size;
+
+  &__first {
+    background: #f09ea0;
+    border-radius: 50%;
+    width: calc($_size / 3.5);
+    aspect-ratio: 1;
+    position: absolute;
+    top: 20%;
+    left: 55%;
+
+    &::before {
+      content: "";
+      background: #e9bf55;
+      border-radius: 50%;
+      width: calc($_size / 6);
+      aspect-ratio: 1;
+      position: absolute;
+      top: 110%;
+      left: 75%;
+    }
+  }
+
+  &__second {
+    background: #f09ea0;
+    border-radius: 50%;
+    width: calc($_size / 4.2);
+    aspect-ratio: 1;
+    position: absolute;
+    top: 70%;
+    left: 45%;
+
+    &::before {
+      content: "";
+      background: #e9bf55;
+      border-radius: 50%;
+      width: calc($_size / 8);
+      aspect-ratio: 1;
+      position: absolute;
+      top: -90%;
+      left: -75%;
+    }
+
+    &::after {
+      content: "";
+      background: #ff8c42;
+      border-radius: 50%;
+      width: calc($_size / 7);
+      aspect-ratio: 1;
+      position: absolute;
+      top: 0;
+      left: -85%;
+    }
+  }
+}
+
+.loader {
+  background: #f9de8f;
+  border-radius: 50%;
+  width: calc($_size * 2);
+  height: calc($_size * 2);
+  overflow: hidden;
+  position: relative;
+  animation: spinner 1.6s steps(1) infinite;
+
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:nth-child(2) {
+      left: $_size;
+      transform: rotate(90deg);
+    }
+
+    &:nth-child(3) {
+      top: $_size;
+      transform: rotate(-90deg);
+    }
+
+    &:nth-child(4) {
+      left: $_size;
+      top: $_size;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes spinner {
+  from,
+  to {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  6.25% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  12.5% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 100% 50%, 100% 100%, 0% 100%);
+  }
+  18.75% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 100% 100%, 0% 100%);
+  }
+
+  25% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+  }
+  31.25% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 0% 100%);
+  }
+  37.5% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 0% 50%);
+  }
+  43.75% {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 50%);
+  }
+
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 0% 0%);
+  }
+  56.25% {
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%);
+  }
+  62.5% {
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%);
+  }
+  68.75% {
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%);
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%);
+  }
+  81.25% {
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  87.5% {
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%);
+  }
+  93.75% {
+    clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+  }
+}
