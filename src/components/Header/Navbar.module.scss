@@ -70,8 +70,10 @@
   }
   @include screen-burger {
     flex-direction: row;
+    gap: 2rem;
     text-shadow: var(--background) 2px 2px 2px, var(--background) -2px 2px 2px,
       var(--background) -2px -2px 2px, var(--background) 2px -2px 2px;
+    margin-top: 0.5rem;
   }
   @include screen-min-1280 {
     font-size: 2rem;

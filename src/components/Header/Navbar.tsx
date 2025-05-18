@@ -24,6 +24,10 @@ const navbarItems: Array<{
     name: "About",
   },
   {
+    link: "/deals",
+    name: "Deals",
+  },
+  {
     link: "/contact",
     name: "Contact",
   },
