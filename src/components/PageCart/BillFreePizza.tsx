@@ -13,13 +13,13 @@ export default function BillFreePizza({ bill, isBirthday }: Props) {
       <p className={styles.text}>5 for 4</p>
       {isBirthday ? (
         <div className={styles.flexRow}>
-          {bill.freeDizzaDealValue > 0 && (
-            <p className={styles.textLineThrough}>{bill.freeDizzaDealValue}</p>
+          {bill.freePizzaDealValue > 0 && (
+            <p className={styles.textLineThrough}>{bill.freePizzaDealValue}</p>
           )}
           <p className={styles.text}>0$</p>
         </div>
       ) : (
-        <p className={styles.text}>{bill.freeDizzaDealValue * -1}$</p>
+        <p className={styles.text}>{bill.freePizzaDealValue * -1}$</p>
       )}
     </div>
   );
