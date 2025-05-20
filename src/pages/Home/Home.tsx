@@ -26,9 +26,9 @@ export default function Home() {
           <Image
             className={styles.image__image}
             src="/pizza-hero.png"
-            alt="Next.js logo"
-            width={1744}
-            height={1284}
+            alt="food on a wooden table"
+            width={1500}
+            height={1100}
             priority
           />
 

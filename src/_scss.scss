@@ -34,6 +34,12 @@
   }
 }
 
+@mixin screen-min-1400 {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
 @mixin padding-inline {
   padding-inline: 1rem;
   @include screen-min-480 {

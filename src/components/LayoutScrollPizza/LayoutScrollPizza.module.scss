@@ -40,7 +40,7 @@
   @include screen-min-1024 {
     display: none;
   }
-  @media screen and (min-width: 1400px) {
+  @include screen-min-1400 {
     display: block;
     width: calc(100% - 63rem);
     height: calc(100% + 11rem);
