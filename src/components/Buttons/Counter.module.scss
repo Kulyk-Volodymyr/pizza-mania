@@ -1,19 +1,23 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 @mixin _general {
-  color: var(--color-4);
-  height: 2.125rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  & {
+    height: 2.125rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-4);
+  }
   @include screen-min-480 {
     height: 2.5rem;
   }
 }
 
 @mixin _general_small {
-  height: 1.75rem;
+  & {
+    height: 1.75rem;
+  }
   @include screen-min-320 {
     height: 2.125rem;
   }
@@ -23,18 +27,20 @@
 }
 
 @mixin _button {
-  font-family: var(--font-quicksand);
-  font-size: 1.875rem;
-  font-weight: 800;
-  outline: none;
-  border: 1px solid var(--color-1);
-  background: var(--color-1);
-  padding-bottom: 0.125rem;
-  cursor: pointer;
-  width: 2.125rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s;
+  & {
+    font-size: 1.875rem;
+    font-weight: 800;
+    outline: none;
+    padding-bottom: 0.125rem;
+    cursor: pointer;
+    width: 2.125rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    font-family: var(--font-quicksand);
+    border: 1px solid var(--color-1);
+    background: var(--color-1);
+  }
   @include screen-min-480 {
     font-size: 2.25rem;
     width: 2.5rem;
@@ -55,8 +61,10 @@
 }
 
 @mixin _button_small {
-  font-size: 1.5rem;
-  width: 1.75rem;
+  & {
+    font-size: 1.5rem;
+    width: 1.75rem;
+  }
   @include screen-min-320 {
     font-size: 1.875rem;
     width: 2.125rem;
@@ -78,24 +86,24 @@
   }
 
   &__increase {
-    @include _general;
-    @include _button;
     border-top-left-radius: 0.375rem;
     border-bottom-left-radius: 0.375rem;
+    @include _general;
+    @include _button;
   }
 
   &__decrease {
-    @include _general;
-    @include _button;
     border-top-right-radius: 0.375rem;
     border-bottom-right-radius: 0.375rem;
+    @include _general;
+    @include _button;
   }
 
   &__count {
-    @include _general;
     flex: 1;
     border-top: 1px solid var(--color-1);
     border-bottom: 1px solid var(--color-1);
+    @include _general;
   }
 
   &__value {

@@ -1,18 +1,16 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .main {
-  @include padding-inline;
-  @include background-set;
   min-height: 100vh;
   padding-top: 7rem;
   padding-bottom: 1.5rem;
   display: flex;
-
+  @include padding-inline;
+  @include background-set;
   @include screen-min-480 {
     padding-top: 8rem;
     padding-bottom: 2rem;
   }
-
   @include screen-min-768 {
     padding-top: 10rem;
     padding-bottom: 3rem;
@@ -22,15 +20,14 @@
   }
 
   &__inner {
-    @include max-width;
     flex: 1;
+    @include max-width;
     @include screen-min-1280 {
       margin-right: 10%;
     }
   }
 
   &__info {
-    @include glassmorphic;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,6 +37,7 @@
     margin: auto;
     max-width: 20rem;
     padding: 3rem 1rem;
+    @include glassmorphic;
     @include screen-min-768 {
       margin-right: 0;
       max-width: 30rem;

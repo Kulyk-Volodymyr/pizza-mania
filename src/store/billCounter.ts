@@ -24,7 +24,7 @@ export const countBill = (
   data: Product[] | undefined | null
 ): Cart => {
   const D = (n: number) => new Decimal(n);
-  let bill = { ...emptyBill };
+  const bill = { ...emptyBill };
   bill.deliveryPrice = deals.deliveryPrice;
   if (!data) return bill;
 
@@ -40,18 +40,20 @@ export const countBill = (
   bill.toPay = totalPrice;
 
   // Free pizza deal
-  let prices: number[] = [];
-  for (let item of Object.keys(cart)) {
-    let itemPrice: number = data.find((i) => i.id === item)?.price ?? 0;
+  const prices: number[] = [];
+  for (const item of Object.keys(cart)) {
+    const itemPrice: number = data.find((i) => i.id === item)?.price ?? 0;
     for (let i: number = 0; i < cart[item]; i++) {
       prices.push(itemPrice);
     }
   }
-  let freePizzasLength: number = Math.floor(prices.length / deals.freePizzaOf);
+  const freePizzasLength: number = Math.floor(
+    prices.length / deals.freePizzaOf
+  );
   if (freePizzasLength > 0) {
-    let freePizzas: number[] = prices.sort((a, b) => a - b);
+    const freePizzas: number[] = prices.sort((a, b) => a - b);
     freePizzas.splice(freePizzasLength);
-    let freePizzasDeal: number = freePizzas
+    const freePizzasDeal: number = freePizzas
       .reduce((total: Decimal, item) => {
         return total.plus(D(item));
       }, D(0))

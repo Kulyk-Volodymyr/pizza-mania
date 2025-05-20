@@ -41,7 +41,9 @@
 }
 
 @mixin padding-inline {
-  padding-inline: 1rem;
+  & {
+    padding-inline: 1rem;
+  }
   @include screen-min-480 {
     padding-inline: 1.5rem;
   }
@@ -77,8 +79,10 @@
 }
 
 @mixin header-icon-size {
-  height: 1.75rem;
-  width: 1.75rem;
+  & {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
   @include screen-min-480 {
     height: 2rem;
     width: 2rem;
@@ -108,9 +112,13 @@
 }
 
 @mixin font-h1 {
-  font-family: var(--font-kaushan-script);
-  font-weight: 400;
-  font-size: 3.75rem;
+  & {
+    font-weight: 400;
+    font-family: var(--font-kaushan-script);
+  }
+  & {
+    font-size: 3.75rem;
+  }
   @include screen-min-480 {
     font-size: 4.25rem;
   }
@@ -123,7 +131,9 @@
 }
 
 @mixin paragraph {
-  font-size: 1.375rem;
+  & {
+    font-size: 1.375rem;
+  }
   @include screen-min-480 {
     font-size: 1.5rem;
   }
@@ -142,13 +152,15 @@
   color: #f4f4f4;
   cursor: pointer;
   display: block;
-  font-size: 1.25rem;
   outline: none;
-  padding: 0.875rem 1.75rem;
   text-decoration: none;
   text-wrap: nowrap;
   transition: all 0.2s;
   width: fit-content;
+  & {
+    font-size: 1.25rem;
+    padding: 0.875rem 1.75rem;
+  }
   @include screen-min-480 {
     font-size: 1.375rem;
     padding: 1rem 2rem;
@@ -157,22 +169,26 @@
     font-size: 1.5rem;
     padding: 1.125rem 2.25rem;
   }
-  &:hover,
-  &:focus {
-    background-color: transparent;
-    color: var(--color-1);
-  }
-  &:focus {
-    outline: 2px solid var(--color-2);
+  & {
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--color-1);
+    }
+    &:focus {
+      outline: 2px solid var(--color-2);
+    }
   }
 }
 
 @mixin background-set {
-  background-image: url("/background/lettuce.png");
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: 45% auto;
-  background-attachment: fixed;
+  & {
+    background-image: url("/background/lettuce.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 45% auto;
+    background-attachment: fixed;
+  }
   @include screen-min-480 {
     background-image: url("/background/lettuce.png"),
       url("/background/peppers.png");

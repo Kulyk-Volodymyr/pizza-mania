@@ -33,9 +33,11 @@ export const useCartStore = create<States & Actions>((set) => ({
       const currentCount = state.cart[value];
       const newCart = { ...state.cart };
 
-      currentCount > 1
-        ? (newCart[value] = currentCount - 1)
-        : delete newCart[value];
+      if (currentCount > 1) {
+        newCart[value] = currentCount - 1;
+      } else {
+        delete newCart[value];
+      }
 
       return { cart: newCart, itemsQuantity: state.itemsQuantity - 1 };
     }),

@@ -1,5 +1,6 @@
 "use client";
 import styles from "./Bill.module.scss";
+import type { ChangeEvent } from "react";
 import { useCartStore } from "@/store/cartStore";
 import { useProductsStore } from "@/store/productsStore";
 import { useEffect, useState } from "react";
@@ -17,10 +18,10 @@ export default function Bill() {
   useEffect(() => {
     if (!cart || !data) return;
     setBill(countBill(cart, data));
-  }, [cart]);
+  }, [cart, data]);
 
-  const toggleBirthday = (e: any) => {
-    e.target.blur();
+  const toggleBirthday = (e: ChangeEvent<HTMLInputElement>) => {
+    e.currentTarget.blur();
     setIsBirthday(!isBirthday);
   };
 
@@ -47,7 +48,7 @@ export default function Bill() {
             className={styles.checkbox}
           />
           <label htmlFor="birthday" className={styles.label}>
-            It's my birthday
+            It&apos;s my birthday
           </label>
         </div>
         <p className={styles.text}>

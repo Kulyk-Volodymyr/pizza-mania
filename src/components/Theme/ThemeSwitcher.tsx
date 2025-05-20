@@ -14,7 +14,7 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   const toggleTheme = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (

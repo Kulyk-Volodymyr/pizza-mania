@@ -1,5 +1,6 @@
 "use client";
 import styles from "./Counter.module.scss";
+import type { MouseEvent } from "react";
 import { useCartStore } from "@/store/cartStore";
 
 interface Props {
@@ -10,14 +11,14 @@ interface Props {
 export default function Counter({ id, small }: Props) {
   const { cart, increase, decrease } = useCartStore((state) => state);
 
-  const increaseByOne = (e: any) => {
+  const increaseByOne = (e: MouseEvent<HTMLButtonElement>) => {
     increase(id);
-    e.target.blur();
+    e.currentTarget.blur();
   };
 
-  const decreaseByOne = (e: any) => {
+  const decreaseByOne = (e: MouseEvent<HTMLButtonElement>) => {
     decrease(id);
-    e.target.blur();
+    e.currentTarget.blur();
   };
 
   return (

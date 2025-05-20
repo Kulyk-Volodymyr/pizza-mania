@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .header {
   display: flex;
@@ -27,9 +27,9 @@
   }
 
   &__icon {
-    @include header-icon;
     height: 2rem;
     width: 2rem;
+    @include header-icon;
     @include screen-min-480 {
       height: 2.5rem;
       width: 2.5rem;

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function EmptyCart() {
   return (
     <p className={styles.info}>
-      The cart is empty. Let's{" "}
+      The cart is empty. Let&apos;s{" "}
       <Link href="/menu" className={styles.info__link}>
         choose pizza!
       </Link>

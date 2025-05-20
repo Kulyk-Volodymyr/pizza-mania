@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .info {
   color: var(--color-4);

@@ -1,10 +1,10 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .main {
-  @include padding-inline;
   min-height: 100vh;
   padding-top: 5rem;
   padding-bottom: 2rem;
+  @include padding-inline;
   @include screen-min-480 {
     padding-top: 6rem;
   }
@@ -27,7 +27,6 @@
 
 .picture {
   display: none;
-
   @include screen-min-768 {
     display: block;
     position: absolute;

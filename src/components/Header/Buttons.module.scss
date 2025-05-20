@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .buttons {
   display: flex;
@@ -14,10 +14,10 @@
   }
 
   &__user {
-    @include header-icon;
-    @include header-icon-size;
     mask-image: url("../../assets/icons/user.svg");
     -webkit-mask-image: url("../../assets/icons/user.svg");
+    @include header-icon;
+    @include header-icon-size;
 
     &:hover,
     &:focus {
@@ -26,10 +26,10 @@
   }
 
   &__cart {
-    @include header-icon;
-    @include header-icon-size;
     mask-image: url("../../assets/icons/cart.svg");
     -webkit-mask-image: url("../../assets/icons/cart.svg");
+    @include header-icon;
+    @include header-icon-size;
 
     &:hover,
     &:focus {
@@ -38,20 +38,19 @@
   }
 
   &__burger {
-    @include header-icon-size;
     background-color: transparent;
     border: none;
     cursor: pointer;
     outline: none;
     position: relative;
+    @include header-icon-size;
+    @include screen-burger {
+      display: none;
+    }
 
     &:hover span,
     &:focus span {
       background: var(--color-2);
-    }
-
-    @include screen-burger {
-      display: none;
     }
   }
 

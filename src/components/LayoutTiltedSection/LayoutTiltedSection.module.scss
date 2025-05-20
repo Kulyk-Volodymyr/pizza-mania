@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .main {
   overflow: hidden;
@@ -16,10 +16,10 @@
 }
 
 .picture {
-  @include padding-inline;
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
+  @include padding-inline;
   @include screen-min-480 {
     padding-top: 6rem;
     clip-path: polygon(0% 0%, 100% 0%, 100% 56.25%, 0% 100%);
@@ -42,9 +42,9 @@
 
 .picture {
   &__header {
-    @include font-h1;
     text-align: center;
     z-index: 2;
+    @include font-h1;
     @include screen-min-480 {
       text-align: left;
       margin-left: 3rem;

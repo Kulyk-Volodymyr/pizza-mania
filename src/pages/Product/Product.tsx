@@ -22,21 +22,21 @@ export default function Product() {
     if (!path) return;
 
     const productId = path[path.length - 1];
-    const pizza = data.find((i: any) => i.id === productId) ?? null;
+    const pizza = data.find((i: Product) => i.id === productId) ?? null;
     setProduct(pizza);
 
-    let pizzasId: string[] = [];
-    for (let i of data) pizzasId.push(i.id);
-    let pizzaIndex: number | null = pizza ? pizzasId.indexOf(pizza.id) : null;
+    const pizzasId: string[] = [];
+    for (const i of data) pizzasId.push(i.id);
+    const pizzaIndex: number | null = pizza ? pizzasId.indexOf(pizza.id) : null;
     if (pizzaIndex !== null) {
-      let prevPizza =
+      const prevPizza =
         pizzasId[(pizzasId.length + pizzaIndex - 1) % pizzasId.length];
-      let nextPizza =
+      const nextPizza =
         pizzasId[(pizzasId.length + pizzaIndex + 1) % pizzasId.length];
       setPrevPizzaId(prevPizza);
       setNextPizzaId(nextPizza);
     }
-  }, [data]);
+  }, [data, pathname]);
 
   return (
     <main className={styles.main}>

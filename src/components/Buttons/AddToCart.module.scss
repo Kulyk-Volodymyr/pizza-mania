@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .button {
   color: var(--color-1);

@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .logo {
   display: flex;
@@ -14,10 +14,10 @@
   }
 
   &__icon {
-    @include header-icon;
-    @include header-icon-size;
     mask-image: url("../../assets/icons/pizza-slice.svg");
     -webkit-mask-image: url("../../assets/icons/pizza-slice.svg");
+    @include header-icon;
+    @include header-icon-size;
   }
 
   &__text {

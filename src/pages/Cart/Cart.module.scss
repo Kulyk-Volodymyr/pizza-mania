@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .container {
   display: flex;
@@ -6,17 +6,9 @@
   gap: 1.5rem;
   max-width: 30rem;
   margin: auto;
-
-  & > div {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
   @include screen-min-768 {
     margin-right: 0;
   }
-
   @include screen-min-1024 {
     max-width: 63rem;
     margin-right: auto;
@@ -30,15 +22,20 @@
       flex: 1;
     }
   }
-
-  @media screen and (min-width: 1400px) {
+  @include screen-min-1400 {
     margin-right: 0;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
 
 .section {
-  @include glassmorphic;
   padding: 1rem;
+  @include glassmorphic;
   @include screen-min-480 {
     margin-left: 2rem;
     padding: 1.25rem;

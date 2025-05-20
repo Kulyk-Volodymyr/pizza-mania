@@ -1,7 +1,6 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .navbar {
-  @include glassmorphic;
   position: absolute;
   top: -0.5rem;
   right: -0.75rem;
@@ -11,7 +10,7 @@
   width: 9.5rem;
   padding-top: 6rem;
   padding-bottom: 3rem;
-
+  @include glassmorphic;
   @include screen-min-480 {
     top: -0.75rem;
     right: -1rem;

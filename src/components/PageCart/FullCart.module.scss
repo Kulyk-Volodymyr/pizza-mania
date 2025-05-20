@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 .items {
   list-style: none;
@@ -26,13 +26,13 @@
 
   &__image {
     width: 5rem;
+    transition: all 0.2s;
     @include screen-min-320 {
       width: 6.5rem;
     }
     @include screen-min-480 {
       width: 9rem;
     }
-    transition: all 0.2s;
 
     &:hover,
     &:focus {

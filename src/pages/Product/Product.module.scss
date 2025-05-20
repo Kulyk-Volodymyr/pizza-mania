@@ -1,4 +1,4 @@
-@import "../../_scss";
+@use "../../_scss" as *;
 
 @mixin _max-width {
   margin: auto;
@@ -10,13 +10,13 @@
 }
 
 .main {
-  @include padding-inline;
   min-height: 100vh;
   padding-top: 5rem;
   padding-bottom: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include padding-inline;
   @include screen-min-480 {
     padding-top: 6rem;
     padding-bottom: 2rem;
@@ -30,21 +30,21 @@
   }
 
   &__loader {
-    @include _max-width;
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column: 1/-1;
+    @include _max-width;
   }
 }
 
 .product {
-  @include max-width;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, auto);
   row-gap: 1rem;
   column-gap: 3rem;
+  @include max-width;
   @include screen-min-480 {
     grid-template-columns: 5rem 1fr 5rem;
     grid-template-rows: repeat(5, auto);
@@ -115,11 +115,11 @@
   }
 
   &__text {
-    @include _max-width;
     color: var(--color-3);
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 1.35;
+    @include _max-width;
     @include screen-min-480 {
       font-size: 1.5rem;
     }
@@ -158,15 +158,16 @@
   }
 
   &__buttonPrice {
-    @include _max-width;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
-    margin-block: 1rem;
     grid-column: 1/-1;
     grid-row: 5;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 42rem;
     @include screen-min-480 {
       margin-bottom: 0;
     }
@@ -176,6 +177,7 @@
     }
     @include screen-min-1280 {
       grid-column: 3;
+      max-width: none;
     }
   }
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface NavbarProps {
   navbarHidden: boolean;
-  hideNavbar: Function;
+  hideNavbar: () => void;
 }
 
 const navbarItems: Array<{
@@ -45,7 +45,7 @@ export default function Navbar({ navbarHidden, hideNavbar }: NavbarProps) {
       <ul className={styles.list}>
         {navbarItems.map((item) => (
           <li key={item.name}>
-            <Link href={item.link} onClick={() => hideNavbar()}>
+            <Link href={item.link} onClick={hideNavbar}>
               {item.name}
             </Link>
           </li>

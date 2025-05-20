@@ -4,8 +4,8 @@ import { useCartStore } from "@/store/cartStore";
 
 interface ButtonsProps {
   navbarHidden: boolean;
-  toggleNavbar: Function;
-  hideNavbar: Function;
+  toggleNavbar: () => void;
+  hideNavbar: () => void;
 }
 
 export default function Buttons({
@@ -23,7 +23,7 @@ export default function Buttons({
               href="/login"
               className={styles.buttons__user}
               aria-label="go to login page"
-              onClick={() => hideNavbar()}
+              onClick={hideNavbar}
             ></Link>
           </li>
           <li>
@@ -31,7 +31,7 @@ export default function Buttons({
               href="/cart"
               className={styles.buttons__cart}
               aria-label="go to cart page"
-              onClick={() => hideNavbar()}
+              onClick={hideNavbar}
             ></Link>
           </li>
         </ul>
@@ -46,7 +46,7 @@ export default function Buttons({
         aria-label={
           navbarHidden ? "open navigation menu" : "close navigation menu"
         }
-        onClick={() => toggleNavbar()}
+        onClick={toggleNavbar}
       >
         <span
           className={
