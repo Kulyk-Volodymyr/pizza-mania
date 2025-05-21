@@ -4,16 +4,11 @@ import { ReactNode } from "react";
 import Image from "next/image";
 
 interface Props {
-  pizza: string;
-  animationName: string;
+  page: string;
   children: ReactNode | ReactNode[];
 }
 
-export default function LayoutScrollPizza({
-  pizza,
-  animationName,
-  children,
-}: Props) {
+export default function LayoutScrollPizza({ page, children }: Props) {
   return (
     <main className={styles.main}>
       <div className={styles.wrapper}>
@@ -21,14 +16,28 @@ export default function LayoutScrollPizza({
         <div className={styles.picture}>
           <div className={styles.picture__inner}>
             <div className={styles.picture__container}>
-              <Image
-                src={pizza}
-                alt="pizza"
-                width={1000}
-                height={1000}
-                className={`${styles.picture__image} ${styles.picture__image}_${animationName}`}
-                priority
-              />
+              {page === "cart" && (
+                <Image
+                  src="/cart-pizza.png"
+                  alt="pizza"
+                  width={1000}
+                  height={1000}
+                  className={`${styles.picture__image} ${styles.picture__image_cart}`}
+                  priority
+                />
+              )}
+
+              {page === "menu" && (
+                <Image
+                  src="/menu-pizza.png"
+                  alt="pizza"
+                  width={1000}
+                  height={1000}
+                  className={`${styles.picture__image} ${styles.picture__image_menu}`}
+                  priority
+                />
+              )}
+
               <Image
                 src="/menu-bg.png"
                 alt="pizza toppings"

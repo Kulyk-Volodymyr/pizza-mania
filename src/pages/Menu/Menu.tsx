@@ -11,7 +11,7 @@ export default function Menu() {
   const { data } = useProductsStore((state) => state);
 
   return (
-    <LayoutScrollPizza pizza="/menu-pizza.png" animationName="menu">
+    <LayoutScrollPizza page="menu">
       <h1 className={styles.section__header}>Menu</h1>
       {data ? (
         <ul className={styles.section__pizzas}>

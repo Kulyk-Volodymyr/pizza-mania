@@ -11,7 +11,7 @@ export default function Cart() {
   const { itemsQuantity } = useCartStore((state) => state);
 
   return (
-    <LayoutScrollPizza pizza="/cart-pizza.png" animationName="cart">
+    <LayoutScrollPizza page="cart">
       <div className={styles.container}>
         <section className={styles.section}>
           <SectionHeader title="My Pizzas" icon="cart" />
