@@ -15,6 +15,7 @@ export default function Product() {
   const [product, setProduct] = useState<Product | undefined | null>(undefined);
   const [prevPizzaId, setPrevPizzaId] = useState<string | undefined>(undefined);
   const [nextPizzaId, setNextPizzaId] = useState<string | undefined>(undefined);
+  const [imageIsLoaded, setImageIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     if (!data) return;
@@ -48,10 +49,21 @@ export default function Product() {
               <Image
                 src={`/pizzas/${product.id}.png`}
                 alt={`pizza ${product.name}`}
-                width={600}
-                height={600}
-                priority
+                width={640}
+                height={640}
+                className={styles.product__imageMain}
+                onLoad={() => setImageIsLoaded(true)}
               />
+              {!imageIsLoaded && (
+                <Image
+                  src={`/pizzas/${product.id}_small.png`}
+                  alt={`pizza ${product.name}`}
+                  width={180}
+                  height={180}
+                  priority
+                  className={styles.product__imageSmall}
+                />
+              )}
             </div>
             <p
               className={`${styles.product__text} ${styles.product__text_info}`}

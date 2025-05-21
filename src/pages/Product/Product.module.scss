@@ -97,6 +97,7 @@
     margin: 1rem auto;
     grid-column: 1/-1;
     grid-row: 2;
+    position: relative;
     @include screen-min-480 {
       grid-column: 2;
       max-width: none;
@@ -109,8 +110,17 @@
       grid-column: 2;
     }
 
-    & img {
+    &Main {
       width: 100%;
+      position: relative;
+    }
+
+    &Small {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
     }
   }
 
